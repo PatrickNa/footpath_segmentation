@@ -1,2 +1,4 @@
-kitti_road_data
+kitti_road_data/
+__pycache__/
+
 .ipynb_checkpoints
