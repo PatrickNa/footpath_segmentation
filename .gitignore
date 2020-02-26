@@ -1,4 +1,11 @@
+fm_model_checkpoints/
 kitti_road_data/
+logs/
 __pycache__/
+test_data
+
+fm_model.h5
 
 .ipynb_checkpoints
+.vscode
+
