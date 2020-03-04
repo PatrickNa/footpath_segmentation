@@ -1,11 +1,12 @@
 fm_model_checkpoints/
+deep_scene_data/
 kitti_road_data/
 logs/
 __pycache__/
 test_data
 
 fm_model.h5
+notes.md
 
 .ipynb_checkpoints
 .vscode
-
