@@ -4,6 +4,7 @@ from random import randrange
 
 import numpy as np
 import tensorflow as tf
+from PIL import Image
 from tensorflow.keras.preprocessing.image import load_img
 
 
@@ -53,3 +54,20 @@ def preprocess_image(image, expand_dimension=False):
         preprocessed_image = tf.expand_dims(preprocessed_image, 0)
 
     return preprocessed_image
+
+def save_predicted_mask(filepath, predicted_mask):
+    """Save the output of a prediction as an image.
+
+    This functions allows to save the prediction, the output of the model as
+    PNG file to the disk. For that a few postprocessing actions need to be
+    applied to the output.
+
+    Args:
+        filepath (string): The directory and filename.
+        predicted_mask: The outcome of the model of shape (1, width, height, 1).
+    """
+
+    mask = np.squeeze(predicted_mask > 0.5)
+    mask = np.uint8(np.stack((mask*0, mask*255, mask*0), -1))
+    mask_as_image = Image.fromarray(mask)
+    mask_as_image.save(filepath)
