@@ -217,7 +217,7 @@ def sum_up_training_dataset(dataset, buffer_size, batch_size, repeat=True, numbe
         else:
             dataset = dataset.cache().shuffle(buffer_size).batch(batch_size).repeat()
     else:
-        dataset.cache().shuffle(buffer_size).batch(batch_size)
+        dataset = dataset.cache().shuffle(buffer_size).batch(batch_size)
     return dataset.prefetch(buffer_size=tf.data.experimental.AUTOTUNE)
 
 def sum_up_validation_dataset(dataset, batch_size, repeat=True, 
