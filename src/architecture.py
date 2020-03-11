@@ -7,7 +7,13 @@ from tensorflow.keras.layers import (Add, Conv2D, Conv2DTranspose, Cropping2D,
 from tensorflow.keras.regularizers import l2
 
 
-class SegmentationModel():
+class FootpathModelArchitecture():
+    """Defines the architecture of the used model.
+
+    Args:
+        input_shape (int tuple): Defines the dimensions of the data fed to the 
+                                    model.
+    """
 
     def __init__(self, input_shape):
         self.inputs = Input(shape=input_shape, name='inputs')
@@ -69,22 +75,28 @@ class SegmentationModel():
         self.score_pool4 = Conv2D(filters=2, kernel_size=(1, 1), strides=(1, 1),
             kernel_regularizer=l2(l=0.001), name='score_pool4')(self.pool4)
 
-        shape_diff = self.upscore2.get_shape()[1] - self.score_pool4.get_shape()[1]
-        self.score_pool4 = ZeroPadding2D(padding=((0, shape_diff), (0, 0)))(self.score_pool4)
+        row_shape_diff = (self.upscore2.get_shape()[1] -
+                          self.score_pool4.get_shape()[1])
+        column_shape_diff = (self.upscore2.get_shape()[2] -
+                             self.score_pool4.get_shape()[2])
+        self.score_pool4 = ZeroPadding2D(padding=((0, row_shape_diff), (0, column_shape_diff)))(self.score_pool4)
 
         self.fuse_pool4 = Add(name='fuse_pool4')([self.upscore2, self.score_pool4])
         self.upscore4 = Conv2DTranspose(filters=2, kernel_size=(4, 4), strides=(
             2, 2), padding='same', name='upscore4')(self.fuse_pool4)
         self.score_pool3 = Conv2D(filters=2, kernel_size=(1, 1), strides=(
-            1, 1),  padding='same', kernel_regularizer=l2(l=0.0001), name='score_pool3')(self.pool3)
+            1, 1),  padding='same', kernel_regularizer=l2(l=0.0001),
+            name='score_pool3')(self.pool3)
 
-        shape_diff = self.upscore4.get_shape()[1] - self.score_pool3.get_shape()[1]
-        self.score_pool3 = ZeroPadding2D(padding=((0, shape_diff), (0, 0)))(self.score_pool3)
+        row_shape_diff = self.upscore4.get_shape()[1] - self.score_pool3.get_shape()[1]
+        column_shape_diff = self.upscore4.get_shape()[2] - self.score_pool3.get_shape()[2]
+        self.score_pool3 = ZeroPadding2D(padding=((0, row_shape_diff), (0, column_shape_diff)))(self.score_pool3)
 
         self.fuse_pool3 = Add(name='fuse_pool3')([self.upscore4, self.score_pool3])
 
         self.upscore32 = Conv2DTranspose(filters=2, kernel_size=(16, 16),
             strides=(8, 8), padding='same', name='upscore32')(self.fuse_pool3)
+
         row_shape_diff = self.upscore32.get_shape()[1] - self.inputs.get_shape()[1]
         column_shape_diff = self.upscore32.get_shape()[2] - self.inputs.get_shape()[2]
         self.upscore32 = Cropping2D(cropping=((0, row_shape_diff), (0, column_shape_diff)))(self.upscore32)
@@ -92,7 +104,5 @@ class SegmentationModel():
         self.final_conv = Conv2D(filters=1, kernel_size=(1, 1), strides=(1, 1),
             padding='same', activation='sigmoid', name='final_conv')(self.upscore32)
 
-        # self.softmax = Softmax(name='softmax')(self.final_conv)
-
-        self.segmentation_model = Model(inputs=self.inputs,
+        self.footpath_model = Model(inputs=self.inputs,
             outputs=self.final_conv)
