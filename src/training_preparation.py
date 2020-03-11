@@ -251,8 +251,8 @@ def sum_up_validation_dataset(dataset, batch_size, repeat=True,
     return dataset
 
 
-def create_checkpoint_callback(checkpoint_directory, save_weights=True,
-                               save_freq=1):
+def create_checkpoint_callback(checkpoint_directory, save_best_only=True, monitor='binary_crossentropy',
+                               save_weights_only=True, save_freq=1):
     """Create a checkpoint callback for the training process.
 
     This function is a wrapper for the native tensorflow ModelCheckpoint object.
@@ -274,6 +274,6 @@ def create_checkpoint_callback(checkpoint_directory, save_weights=True,
         A ModelCheckpoint callback object, which can be added to the training
         execution function.  
     """
-    return ModelCheckpoint(filepath=checkpoint_directory,
-                           save_weights=save_weights, verbose=1, 
+    return ModelCheckpoint(filepath=checkpoint_directory, monitor=monitor, save_best_only=save_best_only,
+                           save_weights_only=save_weights_only, verbose=1,
                            save_freq=save_freq)
