@@ -37,9 +37,10 @@ def create_overlay(input_image, mask, alpha=0.3, from_prediction=False):
         mask = Image.fromarray(np.uint8(mask))
     else:
         mask = np.squeeze(np.array(mask))
-        mask = np.uint8(((mask - np.min(mask)) /
-                        (np.max(mask) - np.min(mask))) * 255)
-        mask = np.stack((mask*0, mask, mask*0), -1)
+        if (len(mask.shape) < 3):
+            mask = np.uint8(((mask - np.min(mask)) /
+                            (np.max(mask) - np.min(mask))) * 255)
+            mask = np.stack((mask*0, mask, mask*0), -1)
         mask = Image.fromarray(np.uint8(mask))
     
     input_image = np.array(input_image)

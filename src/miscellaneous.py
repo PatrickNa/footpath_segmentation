@@ -70,4 +70,4 @@ def save_predicted_mask(filepath, predicted_mask):
     mask = np.squeeze(predicted_mask > 0.5)
     mask = np.uint8(np.stack((mask*0, mask*255, mask*0), -1))
     mask_as_image = Image.fromarray(mask)
-    mask_as_image.save(filepath)
+    mask_as_image.save(filepath, 'PNG')
