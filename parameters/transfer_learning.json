@@ -1,0 +1,42 @@
+{
+    "initial": {
+        "intial_weight_path": "./training_output-120e/fm_model.h5",
+        "format": "h5",
+        "freezed_layers": [-3]
+    },
+
+    "data": {
+        "training_data_directory": "./deep_scene_data/training/",
+        "training_image_folder": "training_images/",
+        "validation_image_folder": "validation_images/"
+    },
+
+    "input": {
+        "width": 485,
+        "height": 882,
+        "channels": 3
+    },
+
+    "compiler": {
+        "learning_rate": 0.00005,
+        "epsilon": 0.00005 
+    },
+
+    "solver": {
+        "batch_size": 1,
+        "epochs": 35,
+        "save_checkpoints_steps": 5
+    },
+
+    "output": {
+        "output_folder": "training_output/",
+        "log_folder": "logs/",
+        "checkpoint_folder": "checkpoints/",
+        "weights": "weights/",
+        "output_model": "footpath_model.h5"
+    },
+
+    "testing": {
+        "test_data_directory": "./deep_scene_data/testing/"
+    }
+}
