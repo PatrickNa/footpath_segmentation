@@ -46,6 +46,8 @@ def create_overlay(input_image, mask, alpha=0.3, from_prediction=False):
     input_image = np.array(input_image)
     if (len(input_image.shape) > 3):
         input_image = np.squeeze(input_image)
+    if (np.max(input_image) <= 1):
+        input_image *= 255
 
     original_image = Image.fromarray(np.uint8(input_image))
     return Image.blend(original_image, mask, alpha)
