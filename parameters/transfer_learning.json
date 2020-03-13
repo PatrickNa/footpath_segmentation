@@ -2,7 +2,8 @@
     "initial": {
         "intial_weight_path": "./training_output-120e/fm_model.h5",
         "format": "h5",
-        "freezed_layers": [-3]
+        "frozen_layers_by_index": [-3],
+        "frozen_layers_by_name": []
     },
 
     "data": {
