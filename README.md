@@ -59,29 +59,29 @@ to other scenery and camera settings.
 ### Kitti images
 
 Original Image             |  Kitti 120e           |  DeepScene 120e           |  Kitti 120e; DeepScene-Kitti-Mix 35e
-:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------: 
-![](./data/examples/comparison/original_images/0-0.png)|![](./data/examples/comparison/kitti-120e/0-0.png)|![](./data/examples/comparison/ds-120e/0-0.png)|![](./data/examples/comparison/kitti-120e-ds-35e/0-0.png) 
-![](./data/examples/comparison/original_images/0-1.png)|![](./data/examples/comparison/kitti-120e/0-1.png)|![](./data/examples/comparison/ds-120e/0-1.png)|![](./data/examples/comparison/kitti-120e-ds-35e/0-1.png)
-![](./data/examples/comparison/original_images/0-2.png)|![](./data/examples/comparison/kitti-120e/0-2.png)|![](./data/examples/comparison/ds-120e/0-2.png)|![](./data/examples/comparison/kitti-120e-ds-35e/0-2.png)
-![](./data/examples/comparison/original_images/0-3.png)|![](./data/examples/comparison/kitti-120e/0-3.png)|![](./data/examples/comparison/ds-120e/0-3.png)|![](./data/examples/comparison/kitti-120e-ds-35e/0-3.png)
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](./data/examples/comparison/original_images/0-0.png) | ![](./data/examples/comparison/kitti-120e/0-0.png) | ![](./data/examples/comparison/ds-120e/0-0.png) | ![](./data/examples/comparison/kitti-120e-ds-35e/0-0.png) 
+![](./data/examples/comparison/original_images/0-1.png) | ![](./data/examples/comparison/kitti-120e/0-1.png) | ![](./data/examples/comparison/ds-120e/0-1.png) | ![](./data/examples/comparison/kitti-120e-ds-35e/0-1.png)
+![](./data/examples/comparison/original_images/0-2.png) | ![](./data/examples/comparison/kitti-120e/0-2.png) | ![](./data/examples/comparison/ds-120e/0-2.png) | ![](./data/examples/comparison/kitti-120e-ds-35e/0-2.png)
+![](./data/examples/comparison/original_images/0-3.png) | ![](./data/examples/comparison/kitti-120e/0-3.png) | ![](./data/examples/comparison/ds-120e/0-3.png) | ![](./data/examples/comparison/kitti-120e-ds-35e/0-3.png)
 
 ### Deep Scene images
 
 Original Image             |  Kitti 120e           |  DeepScene 120e           |  Kitti 120e; DeepScene Kitti Mix 35e
-:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------: 
-![](./data/examples/comparison/original_images/1-0.png)|![](./data/examples/comparison/kitti-120e/1-0.png)|![](./data/examples/comparison/ds-120e/1-0.png)|![](./data/examples/comparison/kitti-120e-ds-35e/1-0.png)
-![](./data/examples/comparison/original_images/1-1.png)|![](./data/examples/comparison/kitti-120e/1-1.png)|![](./data/examples/comparison/ds-120e/1-1.png)|![](./data/examples/comparison/kitti-120e-ds-35e/1-1.png)
-![](./data/examples/comparison/original_images/1-2.png)|![](./data/examples/comparison/kitti-120e/1-2.png)|![](./data/examples/comparison/ds-120e/1-2.png)|![](./data/examples/comparison/kitti-120e-ds-35e/1-2.png)
-![](./data/examples/comparison/original_images/1-3.png)|![](./data/examples/comparison/kitti-120e/1-3.png)|![](./data/examples/comparison/ds-120e/1-3.png)|![](./data/examples/comparison/kitti-120e-ds-35e/1-3.png)
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](./data/examples/comparison/original_images/1-0.png) | ![](./data/examples/comparison/kitti-120e/1-0.png) | ![](./data/examples/comparison/ds-120e/1-0.png) | ![](./data/examples/comparison/kitti-120e-ds-35e/1-0.png)
+![](./data/examples/comparison/original_images/1-1.png) | ![](./data/examples/comparison/kitti-120e/1-1.png) | ![](./data/examples/comparison/ds-120e/1-1.png) | ![](./data/examples/comparison/kitti-120e-ds-35e/1-1.png)
+![](./data/examples/comparison/original_images/1-2.png) | ![](./data/examples/comparison/kitti-120e/1-2.png) | ![](./data/examples/comparison/ds-120e/1-2.png) | ![](./data/examples/comparison/kitti-120e-ds-35e/1-2.png)
+![](./data/examples/comparison/original_images/1-3.png) | ![](./data/examples/comparison/kitti-120e/1-3.png) | ![](./data/examples/comparison/ds-120e/1-3.png) | ![](./data/examples/comparison/kitti-120e-ds-35e/1-3.png)
 
 ### LaL images
 
 Original Image             |  Kitti 120e           |  DeepScene 120e           |  Kitti 120e; DeepScene Kitti Mix 35e
-:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------: 
-![](./data/examples/comparison/original_images/2-0.png)|![](./data/examples/comparison/kitti-120e/2-0.png)|![](./data/examples/comparison/ds-120e/2-0.png)|![](./data/examples/comparison/kitti-120e-ds-35e/2-0.png)
-![](./data/examples/comparison/original_images/2-1.png)|![](./data/examples/comparison/kitti-120e/2-1.png)|![](./data/examples/comparison/ds-120e/2-1.png)|![](./data/examples/comparison/kitti-120e-ds-35e/2-1.png)
-![](./data/examples/comparison/original_images/2-2.png)|![](./data/examples/comparison/kitti-120e/2-2.png)|![](./data/examples/comparison/ds-120e/2-2.png)|![](./data/examples/comparison/kitti-120e-ds-35e/2-2.png)
-![](./data/examples/comparison/original_images/2-3.png)|![](./data/examples/comparison/kitti-120e/2-3.png)|![](./data/examples/comparison/ds-120e/2-3.png)|![](./data/examples/comparison/kitti-120e-ds-35e/2-3.png)
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](./data/examples/comparison/original_images/2-0.png) | ![](./data/examples/comparison/kitti-120e/2-0.png) | ![](./data/examples/comparison/ds-120e/2-0.png) | ![](./data/examples/comparison/kitti-120e-ds-35e/2-0.png)
+![](./data/examples/comparison/original_images/2-1.png) | ![](./data/examples/comparison/kitti-120e/2-1.png) | ![](./data/examples/comparison/ds-120e/2-1.png) | ![](./data/examples/comparison/kitti-120e-ds-35e/2-1.png)
+![](./data/examples/comparison/original_images/2-2.png) | ![](./data/examples/comparison/kitti-120e/2-2.png) | ![](./data/examples/comparison/ds-120e/2-2.png) | ![](./data/examples/comparison/kitti-120e-ds-35e/2-2.png)
+![](./data/examples/comparison/original_images/2-3.png) | ![](./data/examples/comparison/kitti-120e/2-3.png) | ![](./data/examples/comparison/ds-120e/2-3.png) | ![](./data/examples/comparison/kitti-120e-ds-35e/2-3.png)
 
 
 
