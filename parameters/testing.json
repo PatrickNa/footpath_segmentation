@@ -1,0 +1,63 @@
+{
+    "models": {
+        
+        "kitti-120e": {
+            "root_directory": "training_output-kitti-120e/",
+            "model_file_name": "fm_model.h5",
+            "checkpoint_folder": "model_checkpoints/",
+            "checkpoint_filename": "model_checkpoints",
+            "log_folder": "logs/",
+            "final_weight_folder": "model_weights/"
+        },
+        
+        "ds-120e": {
+            "root_directory": "training_output-ds-120e/",
+            "model_file_name": "footpath_model.h5",
+            "checkpoint_folder": "checkpoints/",
+            "checkpoint_filename": "",
+            "log_folder": "logs/",
+            "final_weight_folder": "weights/"
+        },
+        
+        "kitti-120e-ds-35": {
+            "root_directory": "training_output-kitti-ds-mix-120e-without_changing_lr/",
+            "model_file_name": "footpath_model.h5",
+            "checkpoint_folder": "checkpoints/",
+            "checkpoint_filename": "",
+            "log_folder": "logs/",
+            "final_weight_folder": "weights/"
+        }
+
+    },
+    
+    "test_data": {
+        
+        "kitti": {
+            "test_data_directory": "./kitti_road_data/testing/",
+            "image_dimensions": {
+                "width": 375,
+                "height": 1242
+            }
+        },
+        
+        "ds": {
+            "test_data_directory": "./deep_scene_data/testing/images/",
+            "image_dimensions": {
+                "width": 485,
+                "height": 882
+            }
+        },
+        
+        "lal": {
+            "test_data_directory": "./landsberg_am_lech_dataset/testing/",
+            "image_dimensions": {
+                "width": 720,
+                "height": 1280
+            }
+        }
+    },
+    
+    "test_output": {
+        "test_output_directory": "./test_output/"
+    }
+}
