@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import json
 import os
 from random import randrange
 
@@ -71,3 +72,32 @@ def save_predicted_mask(filepath, predicted_mask):
     mask = np.uint8(np.stack((mask*0, mask*255, mask*0), -1))
     mask_as_image = Image.fromarray(mask)
     mask_as_image.save(filepath, 'PNG')
+
+
+def create_summary_file(filepath, model, parameters, other=None):
+    """Creates a file which contains information about the training/prediction
+       process.
+
+    This function creates a json file which summarizes with which parameters
+    and architecture the user trained or predicted. It is especially useful when
+    a lot of test runs with different datasets are made.
+
+    Args:
+        filepath (string): The directory and file name for the summary. 
+        model (tf.keras.Model): The model which was used to train/predict.
+        parameters (dict): The parameters that were loaded for the task.
+        other (dict): Further custom information that the user wants to keep
+                      track of, e.g. loss function.
+    """
+    model_summary_as_string = model.to_json(indent=4)
+    model_summary_as_json = json.loads(model_summary_as_string)
+    summary = {
+        'model_summary': model_summary_as_json,
+        'action_paramaters': parameters,
+    }
+
+    if (other != None):
+        summary['other_parameters'] = other
+    
+    with open(filepath, 'w') as summary_file:
+        json.dump(summary, summary_file, indent=4)
