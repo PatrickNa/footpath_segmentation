@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import tensorflow as tf
 from tensorflow.keras import Model
 from tensorflow.keras.layers import (Add, Conv2D, Conv2DTranspose, Cropping2D,
                                      Dropout, Input, MaxPool2D, Softmax,
@@ -13,9 +14,14 @@ class FootpathModelArchitecture():
     Args:
         input_shape (int tuple): Defines the dimensions of the data fed to the 
                                     model.
+        model_dtype (string): Defines in which data type the weights of the
+                                    model are handled.
     """
 
-    def __init__(self, input_shape):
+    def __init__(self, input_shape, model_dtype='float32'):
+
+        tf.keras.backend.set_floatx(model_dtype)
+
         self.inputs = Input(shape=input_shape, name='inputs')
         self.conv1_1 = Conv2D(filters=64, kernel_size=3, strides=(1, 1),
             padding='same', activation='relu', name='conv1_1')(self.inputs)
